@@ -23,4 +23,11 @@ class CategoryController extends Controller
 
         return view('index', ['categories' => $categories, 'allNews' => $allNews, 'firstNews' => $firstNews]);
     }
+
+    public function show($id)
+    {
+        $category = Category::find($id);
+        $news = News::where('category_id', $id)->paginate(5);
+        return view('category', ['category' => $category, 'news' => $news]);
+    }
 }

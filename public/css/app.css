@@ -10004,3 +10004,14 @@ a.text-dark:focus {
   max-height: 400px;
 }
 
+.carousel-item a {
+  text-decoration: none;
+  color: white;
+  font-size: 32px;
+}
+
+.card .card-title a {
+  text-decoration: none;
+  color: #212529;
+}
+

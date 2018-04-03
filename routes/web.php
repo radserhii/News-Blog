@@ -12,6 +12,9 @@
 */
 
 Route::get('/', 'CategoryController@index');
+Route::get('category/{id}', 'CategoryController@show')->name('category');
+
+Route::get('news/{id?}', 'NewsController@show')->name('news');
 
 Auth::routes();
 

@@ -9,21 +9,21 @@
         <div class="carousel-item active">
             <img class="d-block w-100" src="{{$allNews[0]->image}}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>{{$allNews[0]->title}}</h5>
+                <h5><a href="{!! route('news', ['id' => $allNews[0]->id]) !!}">{{$allNews[0]->title}}</a></h5>
             </div>
         </div>
 
         <div class="carousel-item">
             <img class="d-block w-100" src="{{$allNews[1]->image}}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>{{$allNews[1]->title}}</h5>
+                <a href="{!! route('news', ['id' => $allNews[1]->id]) !!}">{{$allNews[1]->title}}</a>
             </div>
         </div>
 
         <div class="carousel-item">
             <img class="d-block w-100" src="{{$allNews[2]->image}}" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-                <h5>{{$allNews[2]->title}}</h5>
+                <h5><a href="{!! route('news', ['id' => $allNews[2]->id]) !!}">{{$allNews[2]->title}}</a></h5>
             </div>
         </div>
 

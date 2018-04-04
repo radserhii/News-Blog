@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class News extends Model
 {
-    protected $fillable = ['title', 'content', 'image', 'category_id'];
+    protected $fillable = ['title', 'content', 'image', 'category_id', 'count_views'];
 
     /**
      * Get the category that owns the news.

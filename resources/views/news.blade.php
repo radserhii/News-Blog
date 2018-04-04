@@ -12,7 +12,7 @@
                 <h3>{{$news->title}}</h3>
                 <p>{{$news->content}}</p>
                 <p>Updated: {{$news->updated_at}}</p>
-                <div id="counter" data-title="{{$news->title}}"></div>
+                <div id="counter" data-id="{{$news->id}}"></div>
             </div>
         </div>
     </div>

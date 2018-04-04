@@ -7,16 +7,12 @@ use App\News;
 
 class NewsController extends Controller
 {
-    public function show($id = null)
+    public function show($id)
     {
 
-        if (!$id){
-            $news = News::all();
-            return null;
-        }
-
         $news = News::find($id);
+        $tags = $news->tags;
 
-        return view('news', ['news' => $news]);
+        return view('news', ['news' => $news, 'tags' => $tags]);
     }
 }

@@ -10,10 +10,5 @@
     </div>
 @endsection
 
-{{--<script>--}}
-    {{--var category = @json($category);--}}
-    {{--console.log(category);--}}
-{{--</script>--}}
-
 
 

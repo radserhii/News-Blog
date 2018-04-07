@@ -22,4 +22,6 @@ Route::post('update_count/{id}', 'ApiController@updateCount');
 
 Route::get('get_tags', 'ApiController@getTags');
 
+Route::get('news_comments/{id}', 'ApiController@getNewsComments');
+Route::get('comment_like_counter/{commentId}/{action}', 'ApiController@commentLikeCounter');
 

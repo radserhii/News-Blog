@@ -44,12 +44,10 @@ export default class CounterNewsVisitors extends Component {
         return (
             <div className="container">
                 <div className="row justify-content-start">
-                    <div className="col-md-3">
                         <div className="card">
                             <div className="card-header">All Views: {this.state.countViewsAll}</div>
                             <div className="card-header">Views Now {this.state.countViewsNow}</div>
                         </div>
-                    </div>
                 </div>
             </div>
         );

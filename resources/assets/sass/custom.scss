@@ -1,3 +1,8 @@
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
 //carousel-item
 .carousel-item {
   max-height: 400px;
@@ -38,3 +43,13 @@
   cursor: pointer;
 }
 
+//commmets like and dislike fa
+._like {
+  color: #60ff80;
+  cursor: pointer;
+  margin-right: 10px;
+}
+._dislike {
+  color: #ff3f5e;
+  cursor: pointer;
+}

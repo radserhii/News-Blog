@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\News;
 use App\Tag;
+use App\Comment;
 
 class ApiController extends Controller
 {
@@ -27,5 +28,30 @@ class ApiController extends Controller
     {
         $tags = Tag::all();
         return response()->json(['tags' => $tags], 200);
+    }
+
+    public function getNewsComments($newsId)
+    {
+        $comments = Comment::with('user')
+            ->where('news_id', $newsId)
+            ->orderByDesc('like')
+            ->get();
+        return response()->json(['comments' => $comments]);
+    }
+
+    public function commentLikeCounter($commentId, $action)
+    {
+        $comment = Comment::find($commentId);
+        switch ($action) {
+            case 'like':
+                $count = $comment->like++;
+                $comment->update(['like' => $count]);
+                break;
+            case 'dislike':
+                $count = $comment->dislike++;
+                $comment->update(['dislike' => $count]);
+                break;
+        }
+        return response()->json($comment, 200);
     }
 }

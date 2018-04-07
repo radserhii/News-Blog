@@ -4,7 +4,7 @@
 
         <h1>{{$category->name}}</h1>
         @foreach ($news as $singleNews)
-            <a href="{!! route('news', ['id' => $singleNews->id]) !!}">{{$singleNews->title}}</a><br>
+            <p><a href="{!! route('news', ['id' => $singleNews->id]) !!}">{{$singleNews->title}}</a><p>
         @endforeach
         {{ $news->links() }}
     </div>

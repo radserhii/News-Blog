@@ -15,3 +15,4 @@ require('./bootstrap');
  */
 
 require('./components/CounterNewsVisitors');
+require('./components/SearchTags');

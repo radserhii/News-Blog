@@ -10015,3 +10015,24 @@ a.text-dark:focus {
   color: #212529;
 }
 
+._search {
+  position: relative;
+}
+
+._list-group {
+  position: absolute;
+  z-index: 9999999;
+  width: 50%;
+}
+
+._list-group ul li {
+  list-style-type: none;
+  color: #10707f;
+  text-align: center;
+  padding: 10px;
+  background-color: #fff;
+  border: 0.5px solid #6d4780;
+  border-radius: 3px;
+  cursor: pointer;
+}
+

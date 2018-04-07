@@ -20,4 +20,6 @@ use Illuminate\Http\Request;
 Route::get('get_count/{id}', 'ApiController@getCount');
 Route::post('update_count/{id}', 'ApiController@updateCount');
 
+Route::get('get_tags', 'ApiController@getTags');
+
 

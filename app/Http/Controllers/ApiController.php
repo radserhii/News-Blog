@@ -6,9 +6,16 @@ use Illuminate\Http\Request;
 use App\News;
 use App\Tag;
 use App\Comment;
+use App\Category;
 
 class ApiController extends Controller
 {
+    public function getCategories()
+    {
+        $categories = Category::all();
+        return response()->json(['categories' => $categories], 200);
+    }
+
     public function getCount($id)
     {
         $count = News::find($id)->count_views;
@@ -53,5 +60,27 @@ class ApiController extends Controller
                 break;
         }
         return response()->json($comment, 200);
+    }
+
+    public function getNews(Request $request)
+    {
+
+        $start = $request->startDate;
+        $end = $request->endDate;
+        $tag = $request->tag;
+        $category = $request->category;
+
+        $res = News::whereHas('tags', function ($query) use ($tag) {
+            $query->where('tag_name', $tag);
+        })
+            ->whereHas('category', function ($query) use ($category) {
+                $query->where('name', $category);
+            })
+            ->where('created_at', '>=', $start)
+            ->where('created_at', '<=', $end)
+            ->get();
+
+
+        return response()->json($res, 200);
     }
 }

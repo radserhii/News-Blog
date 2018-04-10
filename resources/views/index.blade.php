@@ -2,6 +2,9 @@
 @section('content')
     <div class="container">
         @include('components.slider')
+        {{--React component AearchFilter--}}
+        <div id="search-filter"></div>
+        {{----}}
         <div class="row _row">
             <div class="col-sm-6">
                 @include('components.top-commentators')

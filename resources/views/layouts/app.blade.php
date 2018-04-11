@@ -35,7 +35,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
 
-                    <div id="search"></div>
+                <div id="search"></div>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -68,10 +68,26 @@
             </div>
         </div>
     </nav>
-
-    <main class="py-4">
+    <div class="container">
+        @section('menu')
+            @if($menu)
+                    <ul class="nav nav-pills">
+                        <!--$menu->roots() - получаем только родительские элементы меню-->
+                        @include('layouts.custom-menu-items', ['items'=>$menu->roots()])
+                    </ul>
+            @endif
+        @show
+    </div>
+    <div class="row">
+        <main class="col-sm-12">
             @yield('content')
-    </main>
+        </main>
+    </div>
+
+    <footer class="text-center align-content-center bg-secondary text-light">
+        <p>&copy; RSStudio</p>
+        <div id="popup"></div>
+    </footer>
 </div>
 </body>
 </html>

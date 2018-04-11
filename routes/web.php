@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'IndexController@index');
+Route::get('/', 'IndexController@index')->name('index');
 
 Route::get('category/{id}', 'CategoryController@show')->name('category');
 
@@ -21,6 +21,13 @@ Route::get('news_tag_name/{name?}', 'TagController@showNewsWithTagName')->name('
 
 Route::post('comment_create/{newsId}', 'CommentController@create')->name('comment_create');
 Route::get('comments_by_user/{id}', 'CommentController@getCommentsByUser')->name('comments_by_user');
+
+Route::group([ 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function()
+{
+    Route::get('/', function() {
+       return view('dashboard.index');
+    } );
+});
 
 Auth::routes();
 

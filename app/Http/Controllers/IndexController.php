@@ -9,7 +9,6 @@ use App\News;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-
 class IndexController extends Controller
 {
     public function index()

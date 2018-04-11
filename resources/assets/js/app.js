@@ -2,6 +2,7 @@ import CounterNewsVisitors from "./components/CounterNewsVisitors";
 import SearchTags from "./components/SearchTags";
 import Liker from "./components/Comments";
 import SearchFilter from "./components/SearchFilter"
+import PopUp from "./components/PopUp"
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes React and other helpers. It's a great starting point while
@@ -9,6 +10,7 @@ import SearchFilter from "./components/SearchFilter"
  */
 
 require('./bootstrap');
+require('./custom');
 
 /**
  * Next, we will create a fresh React component instance and attach it to

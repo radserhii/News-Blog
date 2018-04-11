@@ -39,11 +39,14 @@
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
+                <!-- Authentication Links -->
                     @guest
                         <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         <li><a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                     @else
+                        @if(Auth::user()->is_admin == 1)
+                            <li><a class="btn btn-danger" href="{{route('admin.dashboard')}}">Admin panel</a></li>
+                        @endif
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -71,10 +74,10 @@
     <div class="container">
         @section('menu')
             @if($menu)
-                    <ul class="nav nav-pills">
-                        <!--$menu->roots() - получаем только родительские элементы меню-->
-                        @include('layouts.custom-menu-items', ['items'=>$menu->roots()])
-                    </ul>
+                <ul class="nav nav-pills">
+                    <!--$menu->roots() - получаем только родительские элементы меню-->
+                    @include('layouts.custom-menu-items', ['items'=>$menu->roots()])
+                </ul>
             @endif
         @show
     </div>

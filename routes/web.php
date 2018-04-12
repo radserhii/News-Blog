@@ -24,9 +24,11 @@ Route::get('comments_by_user/{id}', 'CommentController@getCommentsByUser')->name
 
 Route::group([ 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function()
 {
-    Route::get('/', function() {
-       return view('dashboard.index');
-    })->name('admin.dashboard');
+    Route::get('/', 'AdminController@indexCat')->name('admin.dashboard');
+    Route::post('category_store', 'AdminController@storeCat')->name('dashboard.category.store');
+    Route::get('category_edit/{id}', 'AdminController@editCat')->name('dashboard.category.edit');
+    Route::post('category_update/{id}', 'AdminController@updateCat')->name('dashboard.category.update');
+    Route::get('category_destroy/{id}', 'AdminController@destroyCat')->name('dashboard.category.destroy');
 });
 
 Auth::routes();

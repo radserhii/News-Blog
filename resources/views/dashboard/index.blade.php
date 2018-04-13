@@ -12,7 +12,7 @@
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="{{route('admin.dashboard')}}">Category</a>
                     <a class="nav-item nav-link" href="{{route('dashboard.news')}}">News</a>
-                    <a class="nav-item nav-link" href="#">Comments</a>
+                    <a class="nav-item nav-link" href="{{route('dashboard.comment')}}">Comments</a>
                     <a class="nav-item nav-link" href="{{route('dashboard.menu')}}">Menu</a>
                     <a class="nav-item nav-link" href="{{route('dashboard.advert')}}">Advertisements</a>
                     <a class="nav-item nav-link" href="{{route('dashboard.style')}}">Backgrounds</a>

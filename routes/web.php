@@ -43,6 +43,8 @@ Route::group([ 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function
 //    Advert CRUD
     Route::get('advert', 'AdminController@indexAdvert')->name('dashboard.advert');
     Route::post('advert_store', 'AdminController@storeAdvert')->name('dashboard.advert.store');
+//    Comments CRUD
+    Route::get('comment', 'AdminController@indexComment')->name('dashboard.comment');
 //    Background Style
     Route::get('style', 'StyleController@index')->name('dashboard.style');
     Route::post('style_store', 'StyleController@store')->name('dashboard.style.store');

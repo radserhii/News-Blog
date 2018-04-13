@@ -11,6 +11,7 @@ use App\Tag;
 use Illuminate\Support\Facades\DB;
 use App\Menu;
 use App\Advert;
+use App\Comment;
 
 class AdminController extends Controller
 {
@@ -161,4 +162,12 @@ class AdminController extends Controller
         $menu->delete();
         return redirect()->route('dashboard.advert');
     }
+
+//    Comments CRUD
+    public function indexComment()
+    {
+        $comments = Comment::all();
+        return view('dashboard.comment', ['comments' => $comments]);
+    }
+
 }

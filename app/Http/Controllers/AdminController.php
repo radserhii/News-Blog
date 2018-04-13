@@ -9,6 +9,7 @@ use App\Category;
 use App\News;
 use App\Tag;
 use Illuminate\Support\Facades\DB;
+use App\Menu;
 
 class AdminController extends Controller
 {
@@ -102,4 +103,31 @@ class AdminController extends Controller
         $image->move($destinationPath, $imageName);
         return '/images/' . $imageName;
     }
+
+//    Menu CRUD
+
+    public function indexMenu()
+    {
+        $AllMenu = Menu::all();
+        return view('dashboard.menu', ['AllMenu' => $AllMenu]);
+    }
+
+    public function createMenu()
+    {
+        return view('dashboard.menu-create');
+    }
+
+    public function storeMenu(Request $request)
+    {
+        Menu::create($request->all());
+        return redirect()->route('dashboard.menu');
+    }
+
+    public function destroyMenu($id)
+    {
+        $menu = Menu::find($id);
+        $menu->delete();
+        return redirect()->route('dashboard.menu');
+    }
+
 }

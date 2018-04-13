@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('menu')
+@endsection
 @section('content')
     <br><br>
     <div class="offset-2 col-sm-8">
@@ -51,7 +53,7 @@
                     </div>
                     <div class="form-check">
                         <input type="checkbox" name="analytic" class="form-check-input" id="analytic">
-                        <label class="form-check-label"  for="analytic">Analytic</label>
+                        <label class="form-check-label" for="analytic">Analytic</label>
                     </div>
                 </div>
             </div>

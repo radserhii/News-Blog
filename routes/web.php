@@ -35,6 +35,11 @@ Route::group([ 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function
     Route::get('news_create', 'AdminController@createNews')->name('dashboard.news.create');
     Route::post('news_store', 'AdminController@storeNews')->name('dashboard.news.store');
     Route::get('news_destroy/{id}', 'AdminController@destroyNews')->name('dashboard.news.destroy');
+//    Menu CRUD
+    Route::get('menu', 'AdminController@indexMenu')->name('dashboard.menu');
+    Route::get('menu_create', 'AdminController@createMenu')->name('dashboard.menu.create');
+    Route::post('menu_store', 'AdminController@storeMenu')->name('dashboard.menu.store');
+    Route::get('menu_destroy/{id}', 'AdminController@destroyMenu')->name('dashboard.menu.destroy');
 });
 
 Auth::routes();

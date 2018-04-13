@@ -1,5 +1,6 @@
 @extends('layouts.app')
-
+@section('menu')
+@endsection
 @section('content')
     <div class="container">
         <div class="offset-4 col-sm-4">

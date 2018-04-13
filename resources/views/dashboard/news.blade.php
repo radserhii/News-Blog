@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@section('menu')
+@endsection
 @section('content')
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -12,7 +14,7 @@
                     <a class="nav-item nav-link" href="{{route('admin.dashboard')}}">Category</a>
                     <a class="nav-item nav-link active" href="{{route('dashboard.news')}}">News</a>
                     <a class="nav-item nav-link" href="#">Comments</a>
-                    <a class="nav-item nav-link" href="#">Menu</a>
+                    <a class="nav-item nav-link" href="{{route('dashboard.menu')}}">Menu</a>
                     <a class="nav-item nav-link" href="#">Advertisements</a>
                     <a class="nav-item nav-link" href="#">Backgrounds</a>
                 </div>

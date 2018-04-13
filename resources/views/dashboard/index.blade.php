@@ -8,8 +8,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="#">Category</a>
-                    <a class="nav-item nav-link" href="#">News</a>
+                    <a class="nav-item nav-link active" href="{{route('admin.dashboard')}}">Category</a>
+                    <a class="nav-item nav-link" href="{{route('dashboard.news')}}">News</a>
                     <a class="nav-item nav-link" href="#">Comments</a>
                     <a class="nav-item nav-link" href="#">Menu</a>
                     <a class="nav-item nav-link" href="#">Advertisements</a>

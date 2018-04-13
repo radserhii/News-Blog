@@ -25,4 +25,9 @@ class News extends Model
     {
         return $this->hasMany('App\Comment', 'news_id');
     }
+
+    public function getShortContentAttribute()
+    {
+        return mb_substr($this->content, 0, 30) . '...';
+    }
 }

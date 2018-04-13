@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNewsTagsRefTable extends Migration
+class AddAnalyticToNewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateNewsTagsRefTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_tags_ref', function (Blueprint $table) {
-            $table->integer('news_id');
-            $table->integer('tag_id');
+        Schema::table('news', function (Blueprint $table) {
+            $table->boolean('analytic')->after('category_id')->nullable();
         });
     }
 
@@ -26,6 +25,8 @@ class CreateNewsTagsRefTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_tags_ref');
+        Schema::table('news', function (Blueprint $table) {
+            //
+        });
     }
 }

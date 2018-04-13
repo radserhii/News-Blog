@@ -72,14 +72,14 @@
         </div>
     </nav>
     <div class="container">
-        @section('menu')
-            @if($menu)
-                <ul class="nav nav-pills">
-                    <!--$menu->roots() - получаем только родительские элементы меню-->
-                    @include('layouts.custom-menu-items', ['items'=>$menu->roots()])
-                </ul>
-            @endif
-        @show
+        {{--@section('menu')--}}
+            {{--@if($menu)--}}
+                {{--<ul class="nav nav-pills">--}}
+                    {{--<!--$menu->roots() - получаем только родительские элементы меню-->--}}
+                    {{--@include('layouts.custom-menu-items', ['items'=>$menu->roots()])--}}
+                {{--</ul>--}}
+            {{--@endif--}}
+        {{--@show--}}
     </div>
     <div class="row">
         <main class="col-sm-12">

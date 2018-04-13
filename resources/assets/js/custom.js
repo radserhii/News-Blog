@@ -12,11 +12,13 @@ axios.get('/api/styles')
 
 $('._card').hover(function () {
         $('._price', this).css({'color': 'green', 'font-weight': 'bold', 'font-size': '90%'});
-        $("._discount", this).fadeIn(1000);
+        $("._discount", this).css({'opacity': '100', 'transition': 'opacity 1s ease-in-out'});
+        // $("._discount", this).fadeIn(1000);
     },
     function () {
         $('._price', this).css({'color': '', 'font-weight': 'normal', 'font-size': '100%'});
-        $("._discount", this).fadeOut(1000);
+        $("._discount", this).css({'opacity': '0', 'transition': 'opacity 1s ease-in-out'});
+        // $("._discount", this).fadeOut(1000);
     });
 
 window.onbeforeunload = function () {

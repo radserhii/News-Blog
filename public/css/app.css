@@ -13175,9 +13175,11 @@ footer {
 }
 
 ._discount {
-  display: none;
+  opacity: 0;
   text-align: center;
   margin: 10px;
   background-color: #f7ffdb;
+  -webkit-margin-start: 10px;
+  -webkit-margin-end: 10px;
 }
 

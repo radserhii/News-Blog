@@ -28,6 +28,9 @@ class News extends Model
 
     public function getShortContentAttribute()
     {
-        return mb_substr($this->content, 0, 30) . '...';
+        $array = explode('.', $this->content);
+        $resultArray = array_slice($array, 0, 5);
+        $result = implode('.', $resultArray);
+        return $result . '...';
     }
 }

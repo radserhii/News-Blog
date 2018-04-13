@@ -9,7 +9,18 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <h3>{{$news->title}}</h3>
-                        <p>{{$news->content}}</p>
+                        @if($news->analytic)
+                            <p class="text-success">Analytic News</p>
+                            @guest
+                                <p>{{$news->short_content}}</p>
+                                <p class="text-danger">Login or Register for read news</p>
+                            @endguest
+                            @auth
+                                <p>{{$news->content}}</p>
+                            @endauth
+                        @else
+                            <p>{{$news->content}}</p>
+                        @endif
                         <p>Updated: {{$news->updated_at}}</p>
                         <div class="row">
                             <div class="col-sm-4">

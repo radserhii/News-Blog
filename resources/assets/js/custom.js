@@ -11,11 +11,11 @@ axios.get('/api/styles')
     });
 
 $('._card').hover(function () {
-        $('._price', this).css({'color': 'green', 'font-weight': 'bold', 'transform': 'scale(0.9)'})
+        $('._price', this).css({'color': 'green', 'font-weight': 'bold', 'font-size': '90%'});
         $("._discount", this).fadeIn(1000);
     },
     function () {
-        $('._price', this).css({'color': '', 'font-weight': 'normal', 'transform': 'scale(1.0)'});
+        $('._price', this).css({'color': '', 'font-weight': 'normal', 'font-size': '100%'});
         $("._discount", this).fadeOut(1000);
     });
 

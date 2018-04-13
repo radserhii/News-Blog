@@ -56713,7 +56713,21 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 /***/ }),
 /* 73 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios_index__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios_index__);
+
+
+__WEBPACK_IMPORTED_MODULE_0_axios_index___default.a.get('/api/styles').then(function (response) {
+    console.log(response.data.styles);
+    $('body').css('background-color', response.data.styles.body);
+    $('.navbar-laravel').css('background-color', response.data.styles.navbar);
+}).catch(function (error) {
+    console.log(error);
+});
 
 window.onbeforeunload = function () {
     return "You're leaving the site.";
@@ -56728,6 +56742,19 @@ $(document).ready(function () {
     $('form').submit(function () {
         window.onbeforeunload = null;
     });
+
+    // axios.get('/api/styles')
+    //     .then(response => {
+    //         console.log(response.data.styles);
+    //         $('body').css('background-color', response.data.styles.body);
+    //         $('.navbar-laravel').css('background-color', response.data.styles.navbar);
+    //
+    //     })
+    //     .catch(error => {
+    //         console.log(error);
+    //     })
+    // $('body').css('background-color', '#ffffff');
+    // $('.navbar-laravel').css('background-color', 'red');
 });
 
 /***/ }),

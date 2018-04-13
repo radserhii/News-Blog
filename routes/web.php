@@ -40,6 +40,9 @@ Route::group([ 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function
     Route::get('menu_create', 'AdminController@createMenu')->name('dashboard.menu.create');
     Route::post('menu_store', 'AdminController@storeMenu')->name('dashboard.menu.store');
     Route::get('menu_destroy/{id}', 'AdminController@destroyMenu')->name('dashboard.menu.destroy');
+//    Background Style
+    Route::get('style', 'StyleController@index')->name('dashboard.style');
+    Route::post('style_store', 'StyleController@store')->name('dashboard.style.store');
 });
 
 Auth::routes();

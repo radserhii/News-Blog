@@ -16,7 +16,7 @@
                     <a class="nav-item nav-link" href="#">Comments</a>
                     <a class="nav-item nav-link active" href="{{route('dashboard.menu')}}">Menu</a>
                     <a class="nav-item nav-link" href="#">Advertisements</a>
-                    <a class="nav-item nav-link" href="#">Backgrounds</a>
+                    <a class="nav-item nav-link" href="{{route('dashboard.style')}}">Backgrounds</a>
                 </div>
             </div>
         </nav>

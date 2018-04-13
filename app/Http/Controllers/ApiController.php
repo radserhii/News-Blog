@@ -7,6 +7,7 @@ use App\News;
 use App\Tag;
 use App\Comment;
 use App\Category;
+use App\Style;
 
 class ApiController extends Controller
 {
@@ -82,5 +83,11 @@ class ApiController extends Controller
 
 
         return response()->json($res, 200);
+    }
+
+    public function getStyles()
+    {
+        $styles = Style::first();
+        return response()->json(['styles' => $styles], 200);
     }
 }

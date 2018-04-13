@@ -13049,6 +13049,10 @@ a.text-dark:focus {
   clip: auto;
 }
 
+body {
+  background-color: "Roboto", sans-serif;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -13147,5 +13151,16 @@ a.text-dark:focus {
   border: 1px solid #888;
   width: 40%;
   /* Could be more or less, depending on screen size */
+}
+
+._card {
+  cursor: pointer;
+}
+
+._discount {
+  display: none;
+  text-align: center;
+  margin: 10px;
+  background-color: #f7ffdb;
 }
 

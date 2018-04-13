@@ -2,13 +2,21 @@ import axios from "axios/index";
 
 axios.get('/api/styles')
     .then(response => {
-        console.log(response.data.styles);
         $('body').css('background-color', response.data.styles.body);
         $('.navbar-laravel').css('background-color', response.data.styles.navbar);
 
     })
     .catch(error => {
         console.log(error);
+    });
+
+$('._card').hover(function () {
+        $('._price', this).css({'color': 'green', 'font-weight': 'bold', 'transform': 'scale(0.9)'})
+        $("._discount", this).fadeIn(1000);
+    },
+    function () {
+        $('._price', this).css({'color': '', 'font-weight': 'normal', 'transform': 'scale(1.0)'});
+        $("._discount", this).fadeOut(1000);
     });
 
 window.onbeforeunload = function () {
@@ -24,19 +32,6 @@ $(document).ready(function () {
     $('form').submit(function () {
         window.onbeforeunload = null;
     });
-
-    // axios.get('/api/styles')
-    //     .then(response => {
-    //         console.log(response.data.styles);
-    //         $('body').css('background-color', response.data.styles.body);
-    //         $('.navbar-laravel').css('background-color', response.data.styles.navbar);
-    //
-    //     })
-    //     .catch(error => {
-    //         console.log(error);
-    //     })
-    // $('body').css('background-color', '#ffffff');
-    // $('.navbar-laravel').css('background-color', 'red');
 });
 
 

@@ -8,11 +8,14 @@
         <div class="row _row">
             <div class="col-sm-2">
                 @foreach($advertsLeft as $advert)
-                    <div class="card">
+                    <div class="card _card">
                         <div class="card-body">
-                            <h5 class="card-title">{{$advert->name}}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Price: {{$advert->price}} $</h6>
-                            <a href="#" class="card-link"> {{$advert->vendor}}</a>
+                            <h3 class="card-title">{{$advert->name}}</h3>
+                            <h5 class="card-subtitle mb-2 text-muted">Price: <div class="_price">{{$advert->price}} $</div></h5>
+                            <p> Vendor: {{$advert->vendor}}</p>
+                        </div>
+                        <div class="_discount">
+                            <p>Купон на скидку <span style="color: red">YUOLJGDRRDRRT</span> примените и получите скидку 10%</p>
                         </div>
                     </div>
                 @endforeach

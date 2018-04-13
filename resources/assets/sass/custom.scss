@@ -1,4 +1,6 @@
-
+body {
+  background-color: $font-family-sans-serif;
+}
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -90,4 +92,15 @@
   padding: 20px;
   border: 1px solid #888;
   width: 40%; /* Could be more or less, depending on screen size */
+}
+
+//advert
+._card {
+  cursor: pointer;
+}
+._discount {
+  display: none;
+  text-align: center;
+  margin: 10px;
+  background-color: #f7ffdb;
 }

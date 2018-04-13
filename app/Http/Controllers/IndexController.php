@@ -9,6 +9,7 @@ use App\News;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use App\Advert;
 class IndexController extends Controller
 {
     public function index()
@@ -53,11 +54,16 @@ class IndexController extends Controller
 
         $topNews = News::whereIn('id', $topNewsId)->get();
 
+        $advertsLeft = Advert::where('left', '1')->orderBy('created_at', 'DESK')->limit(4)->get();
+        $advertsRight = Advert::where('right', '1')->orderBy('created_at', 'DESK')->limit(4)->get();
+
         return view('index', [
             'categories' => $categories,
             'allNews' => $allNews,
             'topUsers' => $topUsers,
-            'topNews' => $topNews
+            'topNews' => $topNews,
+            'advertsLeft' => $advertsLeft,
+            'advertsRight' => $advertsRight
         ]);
     }
 }

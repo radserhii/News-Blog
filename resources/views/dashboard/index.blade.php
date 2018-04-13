@@ -14,7 +14,7 @@
                     <a class="nav-item nav-link" href="{{route('dashboard.news')}}">News</a>
                     <a class="nav-item nav-link" href="#">Comments</a>
                     <a class="nav-item nav-link" href="{{route('dashboard.menu')}}">Menu</a>
-                    <a class="nav-item nav-link" href="#">Advertisements</a>
+                    <a class="nav-item nav-link" href="{{route('dashboard.advert')}}">Advertisements</a>
                     <a class="nav-item nav-link" href="{{route('dashboard.style')}}">Backgrounds</a>
                 </div>
             </div>
@@ -52,11 +52,11 @@
             <form action="{{route('dashboard.category.store')}}" method="post">
                 @csrf
                 <div class="form-group">
-                    <label for="first_name">Name</label>
+                    <label for="name">Name</label>
                     <input type="text"
                            name="name"
                            class="form-control"
-                           id="first_name"/>
+                           id="name"/>
                 </div>
                 <button type="submit" class="btn btn-primary">Add</button>
             </form>

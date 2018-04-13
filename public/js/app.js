@@ -34269,7 +34269,7 @@ var SearchFilter = function (_Component) {
                             { className: 'btn btn-outline-success',
                                 onClick: this.handleSubmit,
                                 type: 'submit' },
-                            'Search news'
+                            'Search'
                         )
                     )
                 ),

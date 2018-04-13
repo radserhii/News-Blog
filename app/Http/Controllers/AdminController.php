@@ -10,6 +10,7 @@ use App\News;
 use App\Tag;
 use Illuminate\Support\Facades\DB;
 use App\Menu;
+use App\Advert;
 
 class AdminController extends Controller
 {
@@ -130,4 +131,34 @@ class AdminController extends Controller
         return redirect()->route('dashboard.menu');
     }
 
+//    Advert CRUD
+
+    public function indexAdvert()
+    {
+        $adverts = Advert::all();
+        return view('dashboard.advert', ['adverts' => $adverts]);
+    }
+
+    public function storeAdvert(Request $request)
+    {
+        $advert = new Advert;
+        $advert->name = $request->name;
+        $advert->price = $request->price;
+        $advert->vendor = $request->vendor;
+        if ($request->position === "left") {
+            $advert->left = 1;
+        }
+        if ($request->position === "right") {
+            $advert->right = 1;
+        }
+        $advert->save();
+        return redirect()->route('dashboard.advert');
+    }
+
+    public function destroyAdvert($id)
+    {
+        $menu = Advert::find($id);
+        $menu->delete();
+        return redirect()->route('dashboard.advert');
+    }
 }

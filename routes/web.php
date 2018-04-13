@@ -40,9 +40,13 @@ Route::group([ 'prefix' => 'admin', 'middleware' => ['auth', 'admin']], function
     Route::get('menu_create', 'AdminController@createMenu')->name('dashboard.menu.create');
     Route::post('menu_store', 'AdminController@storeMenu')->name('dashboard.menu.store');
     Route::get('menu_destroy/{id}', 'AdminController@destroyMenu')->name('dashboard.menu.destroy');
+//    Advert CRUD
+    Route::get('advert', 'AdminController@indexAdvert')->name('dashboard.advert');
+    Route::post('advert_store', 'AdminController@storeAdvert')->name('dashboard.advert.store');
 //    Background Style
     Route::get('style', 'StyleController@index')->name('dashboard.style');
     Route::post('style_store', 'StyleController@store')->name('dashboard.style.store');
+    Route::get('advert_destroy/{id}', 'AdminController@destroyAdvert')->name('dashboard.advert.destroy');
 });
 
 Auth::routes();

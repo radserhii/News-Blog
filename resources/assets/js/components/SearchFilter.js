@@ -185,7 +185,7 @@ export default class SearchFilter extends Component {
                     <div className="col-sm-2">
                         <button className="btn btn-outline-success"
                                 onClick={this.handleSubmit}
-                                type="submit">Search news
+                                type="submit">Search
                         </button>
                     </div>
                 </div>
